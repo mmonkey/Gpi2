@@ -18,6 +18,8 @@ export NCURSES_NO_UTF8_ACS=1
  #   28 110 2>&1 > /dev/tty \
  #   || exit
 
+URL=https://raw.githubusercontent.com/mmonkey/Gpi2/testing/
+
 function main_menu() {
     local choice
 
@@ -56,16 +58,16 @@ function validate_url(){
 }
 
 function update_controls() {
-    if validate_url https://raw.githubusercontent.com/SinisterSpatula/Gpi2/master/xboxdrvstart.sh; then
+    if validate_url ${URL}xboxdrvstart.sh; then
         cd
         cd /opt/retropie/configs/all
-        sudo wget -O xboxdrvend.sh https://raw.githubusercontent.com/SinisterSpatula/Gpi2/master/xboxdrvend.sh
-        sudo wget -O xboxdrvstart.sh https://raw.githubusercontent.com/SinisterSpatula/Gpi2/master/xboxdrvstart.sh
+        sudo wget -O xboxdrvend.sh ${URL}xboxdrvend.sh
+        sudo wget -O xboxdrvstart.sh ${URL}xboxdrvstart.sh
         sudo chmod 644 *.sh
         sudo chown pi:pi runcommand-on*
         cd
         cd /opt/retropie/supplementary/xboxdrv/bin
-        sudo wget -O quit.sh https://raw.githubusercontent.com/SinisterSpatula/Gpi2/master/quit.sh
+        sudo wget -O quit.sh ${URL}quit.sh
         sudo chmod a+x quit.sh
         echo "---------------"
         echo "|| Success!  ||"
@@ -86,15 +88,15 @@ function launch_commandline() {
 }
 
 function controls_beta() {
-    if validate_url https://raw.githubusercontent.com/SinisterSpatula/Gpi2/test/xboxdrvstart.sh; then
+    if validate_url https://raw.githubusercontent.com/mmonkey/Gpi2/test/xboxdrvstart.sh; then
         cd
         cd /opt/retropie/configs/all
-        sudo wget -O xboxdrvend.sh https://raw.githubusercontent.com/SinisterSpatula/Gpi2/test/xboxdrvend.sh
-        sudo wget -O xboxdrvstart.sh https://raw.githubusercontent.com/SinisterSpatula/Gpi2/test/xboxdrvstart.sh
+        sudo wget -O xboxdrvend.sh ${URL}xboxdrvend.sh
+        sudo wget -O xboxdrvstart.sh ${URL}xboxdrvstart.sh
         sudo chmod 644 *.sh
         cd
         cd /opt/retropie/supplementary/xboxdrv/bin
-        sudo wget -O quit.sh https://raw.githubusercontent.com/SinisterSpatula/Gpi2/test/quit.sh
+        sudo wget -O quit.sh ${URL}quit.sh
         sudo chmod a+x quit.sh
         echo "---------------"
         echo "|| Success!  ||"
@@ -119,11 +121,11 @@ function system_reboot() {
 }
 
 function update_menu() {
-    if validate_url https://raw.githubusercontent.com/SinisterSpatula/Gpi2/master/control_updater_menu.sh; then
+    if validate_url ${URL}control_updater_menu.sh; then
         sudo mkdir -p ~/RetroPie/retropiemenu/Controllertools
         cd
         cd ~/RetroPie/retropiemenu/Controllertools
-        sudo wget -O control_updater_menu.sh https://raw.githubusercontent.com/SinisterSpatula/Gpi2/master/control_updater_menu.sh
+        sudo wget -O control_updater_menu.sh ${URL}control_updater_menu.sh
         sudo chmod 775 control_updater_menu.sh
         sudo chmod a+x *.sh
         echo "---------------"

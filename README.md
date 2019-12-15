@@ -7,7 +7,7 @@ These xboxdrv controller scripts greatly enhance the capabilities of your Gpi Ca
 ## Update the menu
 
 ```shell
-cd && cd RetroPie/retropiemenu && wget -O control_updater_menu.sh  https://raw.githubusercontent.com/SinisterSpatula/Gpi/master/control_updater_menu.sh && sudo chmod 775 control_updater_menu.sh
+cd && cd RetroPie/retropiemenu && wget -O control_updater_menu.sh  https://raw.githubusercontent.com/mmonkey/Gpi/testing/control_updater_menu.sh && sudo chmod 775 control_updater_menu.sh
 ```
 
 ## Then run this command
