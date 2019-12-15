@@ -88,7 +88,7 @@ function launch_commandline() {
 }
 
 function controls_beta() {
-    if validate_url https://raw.githubusercontent.com/mmonkey/Gpi2/test/xboxdrvstart.sh; then
+    if validate_url ${URL}xboxdrvstart.sh; then
         cd
         cd /opt/retropie/configs/all
         sudo wget -O xboxdrvend.sh ${URL}xboxdrvend.sh
